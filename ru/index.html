@@ -48,10 +48,14 @@
 .tts-head{margin:0 0 10px;color:var(--soft);font-size:15px}
 .tts-item+.tts-item{margin-top:16px}
 .tts-item .tw-chat{margin-bottom:0}
+/* Значок VIP — строчный, а слово остаётся на общей базовой линии строки:
+   раньше обёртка была inline-flex, и её базовой линией становился низ
+   значка — слово «VIP» поднималось над соседним текстом. */
 .vip-ic{width:18px;height:18px;flex:none;display:block;border-radius:3px}
-.vip-w{display:inline-flex;align-items:center;gap:4px;vertical-align:-3px}
+.vip-w{display:inline;white-space:nowrap}
+.vip-w .vip-ic{display:inline-block;vertical-align:-4px;margin-right:4px}
 .vip-w strong,.access strong.vip-b{font-weight:700;color:var(--text)}
-.name .vip-w .vip-ic{width:17px;height:17px}
+.name .vip-w .vip-ic{width:17px;height:17px;vertical-align:-3px}
 .other{display:flex;align-items:center;flex-wrap:wrap;gap:7px;margin:10px 0 0;padding-top:10px;border-top:1px solid var(--line);color:var(--soft);font-size:15px}.other .chip{flex:none}
 @media(max-width:650px){.chance-row{grid-template-columns:minmax(0,1fr) 70px 70px;gap:4px;padding-left:6px;padding-right:6px;font-size:14px}.chance-head{font-size:11px}}
 @media(max-width:650px){.avatar-link{width:88px;height:88px}}
