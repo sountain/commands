@@ -120,7 +120,7 @@ function setActive(id){document.querySelectorAll('#section-nav a').forEach(a=>{i
 let sectionObserver;
 function watchSections(){
  sectionObserver?.disconnect();
- const offset=innerWidth<=1000?86:38;
+ const offset=Math.max(innerWidth<=1000?86:38,Math.min(200,innerHeight*.25));
  sectionObserver=new IntersectionObserver(()=>{
   const sections=[...root.querySelectorAll('section')];
   const above=sections.filter(s=>s.getBoundingClientRect().top<=offset);
